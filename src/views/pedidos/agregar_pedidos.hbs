@@ -1,0 +1,159 @@
+<div class="col .mr-3">
+    <div class="content">
+      <div class="row">
+          <div class="col-md-12">
+            <div class="card ">
+              <!-- Agregar pedido-->
+                <form action="/usuarios/modificar/{{id_usuario}}" method="post">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar un pedido <br> <span>Código{{codigo_pedido}}</span></h5>
+                    </div>
+                    <div class="modal-body">
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="inputGroupSelect01">Nombre</label>
+                        </div>
+                          <select class="custom-select" id="inputGroupSelect01">
+                            <option selected>Selecione un cliente</option>
+                            <option value="{{nombre}}">{{nombre}}</option>
+                          </select>
+                           <a class="btn btn-primary" href="/usuarios" role="button">Nuevo Cliente</a>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" value="{{telefono}}" name="telefono" id="" placeholder="Telefono">
+                        </div>
+                          <h3>Detalle pedido</h3>
+                        <table class="table">
+                          <thead class="thead-dark">
+                              <tr>
+                                <th scope="col">Producto</th>
+                                <th scope="col">Valor Unitario</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Valor total</th>
+                                <th scope="col">acciones</th>
+                              </tr>
+                           </thead>
+                        <tbody>
+                        {{#each datos}}
+                        <tr>
+                          <td>
+                            {{id_producto}}
+                          </td>
+                          <td>
+                            {{nombre}}
+                          </td>
+                          <td>
+                            {{cantidad}}
+                          </td>
+                        <td>
+                          <a type="submit" href="/usuarios/eliminar/{{id_usuario}}"  class="btn btn-danger" >Eliminar</a>
+                           <a type="submit" href="/usuarios/modificar/{{id_usuario}}"  class="btn btn-primary" data-toggle="modal" data-target="#modificar{{id_usuario}}" >Modificar</a>
+                          <!-- Modal -->
+                          <div class="modal fade" id="modificar{{id_usuario}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                 <form action="/usuarios/modificar/{{id_usuario}}" method="post">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar producto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Nombre</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>Selecione un producto</option>
+                        <option value="{{nombre}}">{{nombre}}</option>
+                       
+                    </select>
+                    
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" value="{{cantidad}}" name="cantidad" id="" placeholder="Cantidad">
+                    </div>
+                                     
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+              </div>
+            </form>   
+          </div>
+       </div>
+     </div>
+ </td>
+</tr>
+{{/each}}</tbody>
+  
+</table>
+
+
+  </tbody>
+</table>
+
+                                     
+                                     
+</div>
+
+        <div class="modal-footer">
+          <!-- Agregar un producto-->
+           <a type="submit" href="/usuarios/modificar/{{id_usuario}}"  class="btn btn-primary" data-toggle="modal" data-target="#modificar{{id_usuario}}" >Agregar producto</a>
+        <!-- Modal -->
+        <div class="modal fade" id="modificar{{id_usuario}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="/usuarios/modificar/{{id_usuario}}" method="post">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar producto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Nombre</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>Selecione un producto</option>
+                        <option value="{{nombre}}">{{nombre}}</option>
+                       
+                    </select>
+                    
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" value="{{cantidad}}" name="cantidad" id="" placeholder="Cantidad">
+                    </div>
+                                     
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+              </div>
+            </form> 
+               
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Agregar pedido</button>
+    </div>
+    
+  </form>
+                      
+    
+
+</div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+
+
+
+
+
+

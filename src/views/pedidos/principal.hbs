@@ -1,0 +1,70 @@
+<div class="col">
+    
+    <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card ">
+              <div class="card-header">
+                <h4 class="card-title"> Pedidos</h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table tablesorter " id="">
+                    <thead class=" text-primary">
+                      <tr>
+                        <th>
+                          CODIGO PEDIDO
+                        </th>
+                        <th>
+                          NOMBRE
+                        </th>
+                     
+                        <th class="text-center">
+                          CELULAR
+                        </th>
+                        <th class="text-center">
+                          VALOR TOTAL
+                        </th>
+                        <th class="text-center">
+                          ESTADO
+                        </th>
+                        <th class="text-center">
+                          ACCIÓN
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {{#each datos}}
+                      <tr>
+                        
+                        <td>
+                          {{codigo_pedido}}
+                        </td>
+                        <td>
+                          {{nombre}}
+                        </td>
+                        <td class="text-center">
+                          {{celular}}
+                        </td>
+                        <td class="text-center">
+                          {{valor_total}}
+                        </td>
+                        <td class="text-center">
+                          {{estado}}
+                        </td>
+                         <td class="text-center">
+                           <button type="submit" class="btn btn-success btn-block">Ver</button> 
+                        </td>
+                      </tr>
+                       {{/each}}
+                    </tbody>
+                  </table>
+                </div>
+                
+              </div>
+                 <a type="submit" href="/pedidos/agregar"  class="btn btn-primary" >Agregar Producto</a>
+            </div>
+            
+          </div>
+         
+</div>
